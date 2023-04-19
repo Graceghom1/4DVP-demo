@@ -3,18 +3,21 @@ on:
   workflow_dispatch:
     inputs:
       username:
-        description: "Nom d'utilisateur"
+        description: 'Username'
         required: true
+        default: 'grace'
       level:
-        description: "Niveau"
+        description: 'Level'
         required: true
+         default: 'intermédiaire'
       class:
-        description: "Classe"
+        description: 'Class'
         required: true
+         default: 'niveau1'
         options: 
-          - grace
-          - ruphine
-          - syntiche
+          - niveau1
+          - niveau2
+          - niveau3
 jobs:
   player_infos:
     runs-on: ubuntu-latest
