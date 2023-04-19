@@ -9,15 +9,12 @@ on:
       level:
         description: "niveau"
         required: true
-         
+        
       class:
         description: "Classe"
         required: true
-         
-        options: 
-          - niveau1
-          - niveau2
-          - niveau3
+        options: [ "grace", "ruph", "tiche"]
+        type: choice
 jobs:
   player_infos:
     runs-on: ubuntu-latest
