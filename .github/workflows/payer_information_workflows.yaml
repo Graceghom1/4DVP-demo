@@ -3,17 +3,17 @@ on:
   workflow_dispatch:
     inputs:
       username:
-        description: 'Username'
+        description: "Username"
         required: true
-        default: 'grace'
+        default: "grace"
       level:
-        description: 'Level'
+        description: "Level"
         required: true
-         default: 'intermédiaire'
+         default: "intermédiaire"
       class:
-        description: 'Class'
+        description: "Class"
         required: true
-         default: 'niveau1'
+         default: "niveau1"
         options: 
           - niveau1
           - niveau2
