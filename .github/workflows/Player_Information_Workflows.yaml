@@ -1,0 +1,27 @@
+name: Player_Information_Workflows
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: "Nom d'utilisateur"
+        required: true
+        default: "john_doe"
+      level:
+        description: "Niveau"
+        required: true
+        default: "expert"
+      class:
+        description: "Classe"
+        required: true
+        default: "jedi"
+        options: 
+          - jedi
+          - sith
+          - rebel
+jobs:
+  player_infos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher les informations du joueur
+        run: |
+          echo "Le joueur ${{{inputs.username}}} est de niveau ${{{inputs.level}}} et joue un ${{{inputs.class}}}}."

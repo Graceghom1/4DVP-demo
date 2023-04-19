@@ -10,4 +10,11 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Ceci est mon premier job"
+
+        jobs:
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Ceci est mon dexième job"
           
