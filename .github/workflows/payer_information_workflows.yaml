@@ -5,15 +5,15 @@ on:
       username:
         description: "Username"
         required: true
-        default: "grace"
+        
       level:
         description: "Level"
         required: true
-         default: "intermédiaire"
+         
       class:
         description: "Class"
         required: true
-         default: "niveau1"
+         
         options: 
           - niveau1
           - niveau2
