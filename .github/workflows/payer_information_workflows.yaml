@@ -5,15 +5,12 @@ on:
       username:
         description: "Nom d'utilisateur"
         required: true
-        default: "john_doe"
       level:
         description: "Niveau"
         required: true
-        default: "expert"
       class:
         description: "Classe"
         required: true
-        default: "jedi"
         options: 
           - jedi
           - sith
@@ -23,4 +20,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher les informations du joueur
-        run: echo "Le joueur ${{{input.username}}} est de niveau ${{{input.level}}} et joue un ${{{input.class}}}}."
+        run: |
+          echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${ { github.event.inputs.class } }."
