@@ -3,15 +3,15 @@ on:
   workflow_dispatch:
     inputs:
       username:
-        description: "Username"
+        description: "nom d'utilisateur"
         required: true
         
       level:
-        description: "Level"
+        description: "niveau"
         required: true
          
       class:
-        description: "Class"
+        description: "Classe"
         required: true
          
         options: 
