@@ -1,0 +1,11 @@
+name: regulier_workflow
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+    - cron: '0 0 1 * *'
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dire bonjour
+        run: echo "Hello, world!"
