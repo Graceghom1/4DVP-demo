@@ -1,4 +1,4 @@
-name: Player_Information_Workflows
+name: player_information_workflows
 on:
   workflow_dispatch:
     inputs:
@@ -12,13 +12,12 @@ on:
         description: "Classe"
         required: true
         options: 
-          - jedi
-          - sith
-          - rebel
+          - grace
+          - ruphine
+          - syntiche
 jobs:
   player_infos:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher les informations du joueur
-        run: |
-          echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${ { github.event.inputs.class } }."
+        run: echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${ { github.event.inputs.class } }."
