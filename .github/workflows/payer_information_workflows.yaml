@@ -23,5 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher les informations du joueur
-        run:  |
-        echo "Le joueur ${{{inputs.username}}} est de niveau ${{{inputs.level}}} et joue un ${{{inputs.class}}}}."
+        run: echo "Le joueur ${{{inputs.username}}} est de niveau ${{{inputs.level}}} et joue un ${{{inputs.class}}}}."
