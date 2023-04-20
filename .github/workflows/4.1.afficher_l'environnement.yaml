@@ -1,12 +1,12 @@
 name: 4.1.Afficher _l'environnement
+on :
+  push:
 env:
-  MESSAGE: "Ceci est une variable d'environnement"
-
-jobs:
-  display_env:
-    
+  MESSAGE : "ceci  est un variable d'environement"
+jobs :
+  env_print:
     runs-on: ubuntu-latest
     steps:
-    - name: "Afficher le contenu de la variable d'environnement"
-      run: |
-        echo $MESSAGE
+      - name : " affiche v env"
+        run : |
+          echo "${{env.MESSAGE}}"
