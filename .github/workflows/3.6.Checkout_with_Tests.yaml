@@ -1,4 +1,4 @@
-name: C3.6-heckout_with_Tests
+name: 3.6-heckout_with_Tests
 on:
   push:
 
@@ -22,4 +22,4 @@ jobs:
       - name: Install Pytest
         run: pip install pytest
       - name: Run tests with Pytest
-        run: pytest ./...
+        run: pytest 
