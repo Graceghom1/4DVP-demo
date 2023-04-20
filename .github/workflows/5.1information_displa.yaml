@@ -1,4 +1,4 @@
-name: 5.1information_displa
+name: 5.1information_display
 
 on:
   push:
@@ -9,19 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Affichage d'un message de type notice"
-        run: echo "Ceci est une notice."
-        shell: bash
-        env:
-          TYPE_MESSAGE: "notice"
+        run: echo "::notice::Ceci est une notice."
           
       - name: "Affichage d'un message de type warning"
-        run: echo "Ceci est un avertissement."
-        shell: bash
-        env:
-          TYPE_MESSAGE: "warning"
+        run: echo "::warning::Ceci est un avertissement."
           
       - name: "Affichage d'un message de type error"
-        run: echo "Une erreur est survenue."
-        shell: bash
-        env:
-          TYPE_MESSAGE: "error"
+        run: echo "::error::Une erreur est survenue."
+        
