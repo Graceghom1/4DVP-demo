@@ -1,17 +1,20 @@
 name: 4.3.Versions_Python
-
-# Définition des jobs
+on:
+  push:
+    branches: 
+      - main
 jobs:
   version_python:
-    name: Version de Python
+    
     runs-on: ubuntu-latest
     strategy:
       matrix:
         version: ["3.8", "3.9", "3.10"]
+    name: "Python version ${(matrix.version)}"    
     steps:
-    - name: Installer Python
+    - name: "Setup Python ${(matrix.version)}"
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.version }}
-    - name: Afficher la version de Python
+    - name: "Afficher la version de Python"
       run: python --version
