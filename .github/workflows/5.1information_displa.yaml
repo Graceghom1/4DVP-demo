@@ -1,0 +1,27 @@
+name: 5.1information_displa
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  information_display:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Affichage d'un message de type notice"
+        run: echo "Ceci est une notice."
+        shell: bash
+        env:
+          TYPE_MESSAGE: "notice"
+          
+      - name: "Affichage d'un message de type warning"
+        run: echo "Ceci est un avertissement."
+        shell: bash
+        env:
+          TYPE_MESSAGE: "warning"
+          
+      - name: "Affichage d'un message de type error"
+        run: echo "Une erreur est survenue."
+        shell: bash
+        env:
+          TYPE_MESSAGE: "error"
