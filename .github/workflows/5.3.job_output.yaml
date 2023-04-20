@@ -1,0 +1,32 @@
+name: Mon_Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  prepare_tests:
+    runs-on: ubuntu-latest
+    outputs:
+      HOST: ${{ steps.setup_host.outputs.host }}
+      DATABASE: ${{ steps.setup_database.outputs.database }}
+    steps:
+      - name: Setup de l'hôte
+        id: setup_host
+        run: echo "::set-output name=host::srv1"
+      - name: Setup de la base de données
+        id: setup_database
+        run: echo "::set-output name=database::prep002"
+      - name: Écriture dans le fichier de sortie
+        run: |
+          echo "HOST=${{ steps.setup_host.outputs.host }}" >> output.txt
+          echo "DATABASE=${{ steps.setup_database.outputs.database }}" >> output.txt
+
+  display_infos:
+    needs: prepare_tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération des variables de préparation
+        run: |
+          echo "HOST=${{ needs.prepare_tests.outputs.HOST }}"
+          echo "DATABASE=${{ needs.prepare_tests.outputs.DATABASE }}"
