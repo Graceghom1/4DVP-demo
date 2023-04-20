@@ -4,7 +4,7 @@ on:
 
 jobs:
   testing_phase:
-    name: "Running test"
+    
     runs-on: "ubuntu:latest"
    
     steps:
