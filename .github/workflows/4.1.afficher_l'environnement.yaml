@@ -7,9 +7,9 @@ env:
 # Définition des jobs
 jobs:
   display_env:
-    name: "Afficher l'environnement"
+    
     runs-on: ubuntu-latest
     steps:
-    - name: Afficher le contenu de la variable d'environnement
+    - name: "Afficher le contenu de la variable d'environnement"
       run: |
-            echo $MESSAGE
+        echo $MESSAGE
