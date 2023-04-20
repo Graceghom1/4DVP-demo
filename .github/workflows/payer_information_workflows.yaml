@@ -1,23 +1,21 @@
 name: player_information_workflows
-on:
-  workflow_dispatch:
-    inputs:
-      username:
-        description: "nom d'utilisateur"
-        required: true
-        
-      level:
-        description: "niveau"
-        required: true
-        
-      class:
-        description: "Classe"
-        required: true
-        options: [ "grace", "ruph", "tiche"]
-        type: choice
-jobs:
-  player_infos:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Afficher les informations du joueur
-        run: echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${ { github.event.inputs.class } }."
+on: 
+  workflow_dispatch: 
+    inputs: 
+      username: 
+        description: "Nom d'utilisateur" 
+        required: true 
+      level: 
+        description: "Niveau" 
+        required: true 
+      class: 
+        description: "Classe de personnage" 
+        required: true 
+        options: ["jedi", "sith", "rebel"] 
+        type: choice 
+jobs: 
+  player_infos: 
+    runs-on: windows-latest 
+    steps: 
+    - name: Afficher les informations sur le joueur 
+      run: echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${{ github.event.inputs.class }}."
